@@ -1,0 +1,76 @@
+{
+  "title": "Agape Charity Member Registration & Engagement Form",
+  "sections": [
+    {
+      "title": "Member Details",
+      "questions": [
+        {"type": "short_answer", "label": "Full Name"},
+        {"type": "multiple_choice", "label": "Gender", "options": ["Male", "Female", "Prefer not to say"]},
+        {"type": "short_answer", "label": "Official Phone Number"},
+        {"type": "short_answer", "label": "Alternative Phone Number"},
+        {"type": "date", "label": "Birthday (Month & Date)"},
+        {"type": "short_answer", "label": "Gmail Address"},
+        {"type": "paragraph", "label": "How have you been fairing?"}
+      ]
+    },
+    {
+      "title": "Activities & Participation",
+      "questions": [
+        {"type": "linear_scale", "label": "Monthly Financial Partnership Commitment", "scale": {"min":1,"max":5}},
+        {"type": "paragraph", "label": "Suggestions for our Anniversary (30th June)"},
+        {"type": "checkboxes", "label": "Which Department would you like to serve in?", "options": ["Outreach", "Fundraising", "Media", "Logistics", "Children Ministry"]}
+      ]
+    },
+    {
+      "title": "Missions & Vision",
+      "questions": [
+        {"type": "multiple_choice", "label": "April 12th Mission Availability", "options": ["Yes", "No", "Maybe"]},
+        {"type": "short_answer", "label": "Agape Podcast Topic Suggestion"},
+        {"type": "paragraph", "label": "What mission would you like us to have in the future?"}
+      ]
+    },
+    {
+      "title": "Growth & Feedback",
+      "questions": [
+        {"type": "paragraph", "label": "What can we do to improve our effectiveness?"},
+        {"type": "paragraph", "label": "Any complaints or concerns?"},
+        {"type": "short_answer", "label": "Add a friend to Agape Charity (WhatsApp Group link)"}
+      ]
+    }
+  ]
+}# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
